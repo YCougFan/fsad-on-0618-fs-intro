@@ -15,9 +15,9 @@ export default class extends Component {
         event.preventDefault()
         if(this.state.isUpdating){
             const body = {
-                "title": this.state.title,
-                "author": this.state.author,
-                "id": this.props.content._id
+                title: this.state.title,
+                author: this.state.author,
+                id: this.props.content._id
             }
             await fetch(this.state.updateURL, {method: 'PUT', body: JSON.stringify(body)})
             this.setState({updateButton: "Update"})
@@ -36,7 +36,7 @@ export default class extends Component {
     updateBookForm = () => {
         return (
             <form>
-                <input type="text" value={this.state.title}//placeholder="Title"
+                <input type="text" value={this.state.title} // placeholder="Title"
                        onChange={event => this.setState({title: event.target.value})}/>
                 <input type="text" value={this.state.author} // placeholder="Author"
                        onChange={event => this.setState({author: event.target.value})}/>
@@ -58,8 +58,8 @@ export default class extends Component {
         const display = this.displayBook()
         return (
             <div className="book">
-                <h3>New Book</h3>
-                { this.state.isUpdating ? update : display}
+                <h3>This Book</h3>
+                { this.state.isUpdating ? update : display }
                 <form onSubmit={this.updateBook}>
                     <input type="submit" value={this.state.updateButton}/>
                 </form>

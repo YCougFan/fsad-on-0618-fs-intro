@@ -59,6 +59,10 @@ module.exports = cors(
         post('/create-book', createBook),
         put('/update-book', updateBook),
         del('/delete-book/:id', deleteBook),
+        // get('/author', getAuthors),
+        // post('/author', createAuthor),
+        // put('/author', updateAuthor),
+        // del('/author', deleteAuthor),
         get('/hello/:name', hello),
         get('/*', notfound)
     )
